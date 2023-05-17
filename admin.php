@@ -47,9 +47,9 @@ $sql = "SELECT * FROM users";
 $result = $db->query($sql);
 $users = $result->fetchAll(PDO::FETCH_ASSOC);
 
-$abilities_sql = "SELECT * FROM powers";
-$abilities_result = $db->query($abilities_sql);
-$abilities = $powers_result->fetchAll(PDO::FETCH_ASSOC);
+$powers_sql = "SELECT * FROM powers";
+$powers_result = $db->query($powers_sql);
+$powers = $powers_result->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -151,7 +151,7 @@ transform: scale(1.5);
                         <option value="Женский" <?= $user['sex'] == 'Женский' ? 'selected' : '' ?>>Женский</option>
                     </select>
                 </td>
-                <td><input type="number" name="legss[<?= $user_id ?>]" value="<?= $user['legs'] ?>" min="1" max="4"></td>
+                <td><input type="number" name="legss[<?= $user_id ?>]" value="<?= $user['legs'] ?>" min="1" max="5"></td>
                 <td><textarea name="bio[<?= $user_id ?>]"><?= htmlspecialchars($user['bio']) ?></textarea></td>
             
                 <td>
